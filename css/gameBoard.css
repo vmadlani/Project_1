@@ -1,0 +1,77 @@
+h1 {
+	height: 50px;
+	width: 600px;
+	margin: 0 auto;
+	font-family: Courier;
+	font-weight: bold;
+}
+
+h4 {
+	height: 25px;
+	width: 600px;
+	margin: 0 auto;
+	font-family: Courier;
+	font-weight: bold;
+}
+
+#board {
+	display: block;
+	height: 200px;
+	width: 500px;
+	clear: both;
+	margin: 0 auto;
+	margin-bottom: 25px;
+}
+
+#answersContainer {
+	display: block;
+	height: 100px;
+	width: 1080px;
+	float: left;
+	clear: both;
+	margin: 0 auto;
+}
+
+li {
+
+	list-style: none;
+	font-family: Courier;
+	font-size: 10px;
+	margin: 10px;
+}
+
+li.answers {
+	display: inline-block;
+	list-style: none;
+	font-family: Courier;
+	font-size: 10px;
+	margin: 15px;
+}
+
+.draggable1 {
+  width: 150px;
+  height: 25px;
+  background: #ccc;
+}
+
+.droppable1 {
+  left: 250px;
+  top: 0;
+  width: 200px;
+  height: 25px;
+  background: #999;
+  color: #fff;
+  padding: 10px;
+}
+
+.scores {
+	font-family: Courier;
+	font-size: 20px;
+	float: left;
+	clear: both;
+}
+
+
+
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>gameBoard</title>
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+	<script src="js/gameBoard.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/gameBoard.css">
+
+</head>
+	<body>
+	<h1>quickfire family fortunes</h1>
+
+	<h4>This is the topic chosen by the relevant player</h4>
+
+	<ul id="board">
+		<li><div class="droppable1" >Most popular</div></li> 
+		<li><div class="droppable1">Second most popular</div></li> 
+		<li><div class="droppable1">Third most popular</div></li> 
+		<li><div class="droppable1">Least popular</div></li> 
+
+	</ul>
+
+	<div  id="answersContainer">
+	<ul>
+		<li class="answers">	<div class="draggable1" id="ABC" value="XYZ">Most popular</div>	</li> 
+		<li class="answers"><div class="draggable1">Second most popular</div></li> 
+		<li class="answers"><div class="draggable1">Third most popular</div></li> 
+		<li class="answers"><div class="draggable1">Least popular</div></li> 
+	</ul>
+	</div>
+
+	<div class="scores">
+		<p>player 1 score<p>
+		<div id="player1Score">0</div>
+	</div>
+
+	</body>
+</html>
