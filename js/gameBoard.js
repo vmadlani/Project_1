@@ -26,29 +26,44 @@ console.log(key3);
 console.log(key4);
 
 $( ".answers" ).draggable();
-//$("#TWIX").draggable();
-$(key1).draggable();
-$(key2).draggable();
-$(key3).draggable();
-$(key4).draggable();
-
-
+$(key1).draggable({
+  helper : "clone",
+  cursor : "move"
+});
+$(key2).draggable({
+  helper : "clone"
+});
+$(key3).draggable({
+  helper : "clone"
+});
+$(key4).draggable({
+  helper : "clone"
+});
 
 
 // $( ".draggable" ).draggable();
 //   var choiceID = $(this).val();
 //   console.log(choiceID);
 
+// THIS WORKSSSSS!!!!!
 $( "#droppable1" ).droppable({
 	tolerance : "intersect",
-  accept : "#TWIX",
-  activeClass: "active",
+  //accept : key1,
+  //activeClass: "active",
   hoverClass:  "hover",
    drop: function(event, ui) {  	
-    if (true);
-    { p1Score++;
-	   	$("#player1Score").text(p1Score); }     
-  }
+    console.log(event);
+    console.log(event.target.innerHTML);
+    console.log(topicAnswerArray[1]);
+    console.log(event.toElement.innerHTML);
+    if (event.toElement.innerHTML === topicAnswerArray[1]) 
+      {alert("hallejulah!!!")}
+    else {alert("wrong")}
+    //$( "#droppable1" ).text(topicAnswerArray[1])
+    p1Score++;
+    //alert("correct!")
+  }     
+     
  });
 
 $( "#droppable2" ).droppable({
@@ -57,9 +72,9 @@ $( "#droppable2" ).droppable({
   activeClass: "active",
   hoverClass:  "hover",
    drop: function(event, ui) {    
-    if (true);
-    { p1Score++;
-      $("#player1Score").text(p1Score); }     
+    $( "#droppable2" ).text(topicAnswerArray[2])
+    p1Score++;
+    alert("correct!")
   }
  });
 
@@ -69,9 +84,9 @@ $( "#droppable3" ).droppable({
   activeClass: "active",
   hoverClass:  "hover",
    drop: function(event, ui) {    
-    if (true);
-    { p1Score++;
-      $("#player1Score").text(p1Score); }     
+    $( "#droppable3" ).text(topicAnswerArray[3])
+    p1Score++;
+    alert("correct!")
   }
  });
 
@@ -81,16 +96,14 @@ $( "#droppable4" ).droppable({
   activeClass: "active",
   hoverClass:  "hover",
    drop: function(event, ui) {    
-    if (true);
-    { p1Score++;
-      $("#player1Score").text(p1Score); }     
+    $( "#droppable4" ).text(topicAnswerArray[4])
+    p1Score++;
+    alert("correct!")
   }
  });
 
   //var choice1 = $("#C1").text();
   //console.log(choice1);
-
-
 
 });
 // twix, toblerone, time-out, topic
