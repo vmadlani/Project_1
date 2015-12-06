@@ -25,7 +25,7 @@ h4 {
 
 #answersContainer {
 	display: block;
-	height: 100px;
+	height: 50px;
 	width: 1080px;
 	float: left;
 	clear: both;
@@ -48,13 +48,13 @@ li.answers {
 	margin: 15px;
 }
 
-.draggable1 {
+.draggable {
   width: 150px;
   height: 25px;
   background: #ccc;
 }
 
-.droppable1 {
+.droppable {
   left: 250px;
   top: 0;
   width: 200px;
@@ -66,12 +66,18 @@ li.answers {
 
 .scores {
 	font-family: Courier;
-	font-size: 20px;
+	font-size: 15px;
+	font-weight: bold;
 	float: left;
 	clear: both;
 }
 
+.active {
+    border-color : blue;
+    background : gray;
+}  
 
-
-
-
+.hover {
+    border-color : red;
+    background : green;
+}
