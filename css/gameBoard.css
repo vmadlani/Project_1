@@ -1,35 +1,61 @@
+
+body{
+	background-color:black;
+}
+
+
 h1 {
 	height: 50px;
 	width: 600px;
 	margin: 0 auto;
 	font-family: Courier;
 	font-weight: bold;
+	font-size: 25px;
+	color: red;
 }
 
 h4 {
 	height: 25px;
-	width: 600px;
+	width: 1200px;
 	margin: 0 auto;
 	font-family: Courier;
 	font-weight: bold;
+	font-size: 25px;
+	color: yellow;
+	margin-bottom: 20px;
 }
 
 #board {
 	display: block;
 	height: 200px;
-	width: 500px;
+	width: 700px;
 	clear: both;
 	margin: 0 auto;
 	margin-bottom: 25px;
 }
 
-#answersContainer {
+.droppable {
+  left: 250px;
+  top: 0;
+  width: 500px;
+  height: 35px;
+  background: #999;
+  /*color: #fff;*/
+  padding: 10px;
+  font-family: Arial;
+  font-size: 30px;
+  color: yellow;
+}
+
+
+.answersContainer {
 	display: block;
 	height: 50px;
-	width: 1080px;
+	width: 1680px;
 	float: left;
 	clear: both;
 	margin: 0 auto;
+	margin-top: 20px;
 }
 
 li {
@@ -38,39 +64,38 @@ li {
 	font-family: Courier;
 	font-size: 10px;
 	margin: 10px;
+	color: yellow;
 }
 
 li.answers {
 	display: inline-block;
 	list-style: none;
-	font-family: Courier;
-	font-size: 10px;
+	font-family: Arial;
+	font-size: 20px;
 	margin: 15px;
+	text-align: center;
+	font-weight: bold;
 
 }
 
 .draggable {
-  width: 150px;
-  height: 25px;
-  background: #ccc;
+  width: 300px;
+  height: 50px;
+  background: #999;
+
 }
 
-.droppable {
-  left: 250px;
-  top: 0;
-  width: 200px;
-  height: 25px;
-  background: #999;
-  color: #fff;
-  padding: 10px;
-}
 
 .scores {
+	width: 300px;
+	height: 20px;	
 	font-family: Courier;
-	font-size: 15px;
+	font-size: 25px;
 	font-weight: bold;
 	float: left;
 	clear: both;
+	word-wrap: break-word;
+	color: yellow;
 }
 
 .active {
@@ -87,3 +112,11 @@ li.answers {
 	width: 250px;
 	height: 35px;
 }  
+
+
+#reset {
+	width: 100px;
+	height: 50px;
+	background-color: yellow;
+	color: black;
+}
