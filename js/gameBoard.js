@@ -4,29 +4,63 @@ $(document).ready(function(){
     ["TOPIC","ANSWER 1","ANSWER 2","ANSWER 3","ANSWER 4"  ],
     ["NAME A CHARACTER FROM THE WIZARD OF OZ","TIN MAN","DOROTHY","LION","SCARECROW"  ],
     ["NAME SOMETHING THAT HELPS YOU FALL ASLEEP","ALCOHOL","SLEEPING PILLS","WATCHING TV","LISTEN TO MUSIC"  ],
-    ["NAME SOMETHING THAT DRIVERS DO WITH THEIR HANDS WHEN THEY SHOULD BE AT THE WHEEL","USE A MOBILE PHONE","PICK YOUR NOSE","SMOKE","MESSING WITH RADIO/CASSETTE"  ],
+    ["NAME SOMETHING THAT DRIVERS DO WITH THEIR HANDS WHEN THEY SHOULD BE AT THE WHEEL","USE A MOBILE PHONE","PICK YOUR NOSE","SMOKE","MESSING WITH RADIO OR CASSETTE"  ],
     ["NAME SOMETHING ASSOCIATED WITH HIPPIES","DRUGS","LONG HAIR","FLOWERS(POWER)","FREE LOVE"  ],
     ["NAME A CHOCOLATE BAR BEGINNING WITH THE LETTER 'T'","TWIX","TOBLERONE","TIME-OUT","TOPIC"  ],
-    ["NAME SOMETHING PEOPLE DO WHEN THEY HAVE FINISHED A MEAL","BURP","LIGHT A CIGARETTE","HAVE COFFEE/TEA","WIPE YOUR MOUTH"  ],
+    ["NAME SOMETHING PEOPLE DO WHEN THEY HAVE FINISHED A MEAL","BURP","LIGHT A CIGARETTE","HAVE COFFEE OR TEA","WIPE YOUR MOUTH"  ],
     ["NAME SOMETHING YOU CAN SEE BUT YOU CANNOT TOUCH","THE SUN","THE MOON","THE CLOUDS","A RAINBOW"  ],
-    ["NAME SOMETHING YOU BUY OR HIRE FOR A WEDDING","WEDDING DRESS","SUIT/TOP HAT & TAILS","CAR","FLOWERS"  ]
+    ["NAME SOMETHING YOU BUY OR HIRE FOR A WEDDING","WEDDING DRESS","SUIT/TOP HAT AND TAILS","CAR","FLOWERS"  ]
   ]
 
 
 
 var p1Score = 0;
 var p2Score = 0;
-var topicAnswerArray = content[5]; // 0, 1, 2, 3, 4
+var randomIndex = Math.round((Math.random()*7.5)+0.5);
+console.log(randomIndex);
+var topicAnswerArray = content[randomIndex]; // 0, 1, 2, 3, 4
 var choices = ["", "", "", ""];
 var round = 0;
 var correctCells = 0;
 
-// var i = Math.round(Math.random());
-// //Generate random answers in the choices array
-// choices[0]= 
-// choices[1]=
-// choices[2]=
-// choices[3]=
+//SET HEADING
+$("#topic").text(topicAnswerArray[0]);
+
+// LONG WINDED RANDOM SORTER FOR CHOICES ARRAY <<START>>
+var selectionArray = [topicAnswerArray[1], topicAnswerArray[2], topicAnswerArray[3], topicAnswerArray[4]]
+console.log(selectionArray);
+
+var randomNumber = Math.random();
+var randomNumber2 = Math.random();
+var randomNumber3 = Math.random();
+
+if (randomNumber > 0 && randomNumber < 0.25) {
+  choices[0] = selectionArray[0]; selectionArray.splice([0], 1);  
+} else if (randomNumber > 0.25 && randomNumber < 0.5) {
+  choices[0] = selectionArray[1]; selectionArray.splice([1], 1);  
+} else if (randomNumber > 0.5 && randomNumber < 0.75) {
+  choices[0] = selectionArray[2]; selectionArray.splice([2], 1);  
+} else if (randomNumber > 0.75 && randomNumber < 1.0) {
+  choices[0] = selectionArray[3]; selectionArray.splice([3], 1);  
+} 
+
+if (randomNumber2 > 0 && randomNumber2 < 0.33) {
+  choices[1] = selectionArray[0]; selectionArray.splice([0], 1);  
+} else if (randomNumber2 > 0.33 && randomNumber2 < 0.66) {
+  choices[1] = selectionArray[1]; selectionArray.splice([1], 1);  
+} else if (randomNumber2 > 0.66 && randomNumber2 < 1.0) {
+  choices[1] = selectionArray[2]; selectionArray.splice([2], 1);  
+}
+
+if (randomNumber3 > 0 && randomNumber3 < 0.50) {
+  choices[2] = selectionArray[0]; selectionArray.splice([0], 1);  
+} else if (randomNumber3 > 0.50 && randomNumber3 < 1.00) {
+  choices[2] = selectionArray[1]; selectionArray.splice([1], 1);  
+}
+choices[3] = selectionArray[0]
+
+console.log(choices);
+// LONG WINDED RANDOM SORTER FOR CHOICES ARRAY <<END>>
 
 $("#player1Score").text("player 1 score: " + (p1Score));
 $("#player2Score").text("player 2 score: " + (p2Score));

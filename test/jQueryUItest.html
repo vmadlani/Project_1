@@ -1,0 +1,81 @@
+	
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>droppable demo</title>
+  <link rel="stylesheet" href=#>
+  <style>
+  #draggable {
+    width: 100px;
+    height: 100px;
+    background: #ccc;
+  }
+  #droppable {
+    position: absolute;
+    left: 250px;
+    top: 0;
+    width: 125px;
+    height: 125px;
+    background: #999;
+    color: #fff;
+    padding: 10px;
+  }
+  </style>
+
+
+  <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+</head>
+<body>
+ 
+<!-- <div id="droppable">Drop here</div>
+<div id="draggable">Drag me</div>
+ --> 
+
+<div id="origin">
+    <div id="draggable" class="ui-widget-content">
+        <p>I revert when I'm not dropped</p>
+    </div>
+</div>
+<div id="droppable" class="ui-widget-header">
+    <p>Drop me here</p>
+</div>
+
+<script>
+
+$(function() {
+    $("#draggable").draggable({ 
+        
+        revert:  function(dropped) {
+           var dropped = dropped && dropped[0].id == "droppable";
+           if(!dropped) alert("I'm reverting!");
+           return !dropped;
+        } 
+    }).each(function() {
+        var top = $(this).position().top;
+        var left = $(this).position().left;
+        $(this).data('orgTop', top);
+        $(this).data('orgLeft', left);
+    });
+
+    $("#droppable").droppable({
+        activeClass: 'ui-state-hover',
+        hoverClass: 'ui-state-active',
+        drop: function(event, ui) {
+            $(this).addClass('ui-state-highlight').find('p').html('Dropped!');
+        },
+        out: function(event, ui) {
+                // doesn't work but something like this
+                ui.draggable.mouseup(function () {
+                var top = ui.draggable.data('orgTop');
+                var left = ui.draggable.data('orgLeft');
+                ui.position = { top: top, left: left };
+            });
+        }
+    });
+});
+</script>
+ 
+</body>
+</html>
